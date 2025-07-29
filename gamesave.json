@@ -1,0 +1,820 @@
+{
+    "timeData": {
+        "td_currentTimeInSeconds": 9057.3544921875,
+        "td_currentHour": 2,
+        "td_currentMinute": 30,
+        "td_currentDay": 4
+    },
+    "inventoryData": {
+        "slots": [
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            },
+            {
+                "itemName": "",
+                "quantity": 0,
+                "itemType": 0,
+                "iconName": "",
+                "isStackable": false,
+                "maxStackSize": 0
+            }
+        ]
+    }
+}
