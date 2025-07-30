@@ -1,9 +1,9 @@
 {
     "timeData": {
-        "td_currentTimeInSeconds": 9057.3544921875,
-        "td_currentHour": 2,
-        "td_currentMinute": 30,
-        "td_currentDay": 4
+        "td_currentTimeInSeconds": 13750.8935546875,
+        "td_currentHour": 3,
+        "td_currentMinute": 49,
+        "td_currentDay": 5
     },
     "inventoryData": {
         "slots": [
@@ -13,7 +13,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -21,7 +22,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -29,7 +31,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -37,7 +40,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -45,7 +49,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -53,7 +58,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -61,7 +67,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -69,7 +76,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -77,7 +85,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -85,7 +94,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -93,7 +103,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -101,7 +112,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -109,7 +121,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -117,7 +130,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -125,7 +139,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -133,7 +148,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -141,7 +157,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -149,7 +166,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -157,7 +175,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -165,7 +184,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -173,7 +193,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -181,7 +202,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -189,7 +211,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -197,7 +220,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -205,7 +229,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -213,7 +238,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -221,7 +247,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -229,7 +256,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -237,7 +265,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -245,7 +274,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -253,7 +283,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -261,7 +292,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -269,7 +301,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -277,7 +310,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -285,7 +319,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -293,7 +328,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -301,7 +337,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -309,7 +346,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -317,7 +355,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -325,7 +364,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -333,7 +373,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -341,7 +382,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -349,7 +391,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -357,7 +400,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -365,7 +409,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -373,7 +418,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -381,7 +427,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -389,7 +436,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -397,7 +445,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -405,7 +454,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -413,7 +463,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -421,7 +472,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -429,7 +481,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -437,7 +490,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -445,7 +499,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -453,7 +508,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -461,7 +517,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -469,7 +526,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -477,7 +535,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -485,7 +544,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -493,7 +553,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -501,7 +562,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -509,7 +571,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -517,7 +580,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -525,7 +589,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -533,7 +598,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -541,7 +607,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -549,7 +616,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -557,7 +625,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -565,7 +634,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -573,7 +643,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -581,7 +652,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -589,7 +661,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -597,7 +670,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -605,7 +679,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -613,7 +688,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -621,7 +697,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -629,7 +706,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -637,7 +715,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -645,7 +724,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -653,7 +733,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -661,7 +742,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -669,7 +751,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -677,7 +760,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -685,7 +769,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -693,7 +778,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -701,7 +787,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -709,7 +796,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -717,7 +805,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -725,7 +814,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -733,7 +823,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -741,7 +832,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -749,7 +841,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -757,7 +850,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -765,7 +859,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -773,7 +868,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -781,7 +877,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -789,7 +886,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -797,7 +895,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -805,7 +904,8 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
             },
             {
                 "itemName": "",
@@ -813,7 +913,46 @@
                 "itemType": 0,
                 "iconName": "",
                 "isStackable": false,
-                "maxStackSize": 0
+                "maxStackSize": 0,
+                "requiredPotSize": 0
+            }
+        ]
+    },
+    "potData": {
+        "pots": [
+            {
+                "potId": "Pot_b8e5d5ee",
+                "potSize": 0,
+                "plantGrowingName": "",
+                "potEmpty": true,
+                "waterLevel": 5.0,
+                "plantAge": 0,
+                "ageInHours": true,
+                "birthTime": 0.0,
+                "birthDay": 0,
+                "plantName": "",
+                "plantType": 0,
+                "positionX": -4.949999809265137,
+                "positionY": -2.940000057220459,
+                "positionZ": 0.0,
+                "rotationY": 0.0
+            },
+            {
+                "potId": "Pot_f29ac0cb",
+                "potSize": 2,
+                "plantGrowingName": "",
+                "potEmpty": true,
+                "waterLevel": 2.390000104904175,
+                "plantAge": 0,
+                "ageInHours": true,
+                "birthTime": 0.0,
+                "birthDay": 0,
+                "plantName": "",
+                "plantType": 0,
+                "positionX": 5.239999771118164,
+                "positionY": -2.940000057220459,
+                "positionZ": 0.0,
+                "rotationY": 0.0
             }
         ]
     }
