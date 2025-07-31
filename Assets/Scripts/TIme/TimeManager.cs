@@ -29,6 +29,7 @@ public class TimeManager : MonoBehaviour
     public int CurrentHour => currentHour;
     public int CurrentMinute => currentMinute;
     public int CurrentDay => currentDay;
+    public float CurrentTimeInSeconds => currentTimeInSeconds;
     
     // Events
     public delegate void OnHourChanged(int hour);
@@ -36,6 +37,9 @@ public class TimeManager : MonoBehaviour
 
     public delegate void OnDayChanged(int day);
     public static event OnDayChanged onDayChanged;
+    
+    public const int SECONDS_IN_A_DAY = 86400;
+    public const int SECONDS_IN_AN_HOUR = 3600;
 
     void Awake()
     {
@@ -52,10 +56,20 @@ public class TimeManager : MonoBehaviour
 
     void Start()
     {
-        // Init time to the set values
-        currentTimeInSeconds = (startHour * 3600f) + (startMinute * 60f);
-        currentHour = startHour;
-        currentMinute = startMinute;
+        // Load time data from a save
+        if (SaveManager.Instance != null && SaveManager.Instance.LoadGame())
+        {
+            SetTimeData(SaveManager.Instance.CurrentGameData.timeData);
+            Debug.Log("TimeManager: Loaded time data");
+        }
+        else
+        {
+            Debug.Log("TimeManager: Initializing new time data");
+            // Init time to the set values
+            currentTimeInSeconds = (startHour * 3600f) + (startMinute * 60f);
+            currentHour = startHour;
+            currentMinute = startMinute;
+        }
 
         // Init and update UI
         UpdateTimeDisplay();
@@ -80,14 +94,14 @@ public class TimeManager : MonoBehaviour
         {
             currentDay++;
             currentTimeInSeconds = 0;
-            Debug.Log($"New Day! Days: {currentDay}");
+            Debug.Log($"TimeManager: New Day! Days: {currentDay}");
             onDayChanged?.Invoke(currentDay);
         }
 
         // Check for a new hour
         if (oldHour != currentHour)
         {
-            Debug.Log($"Hour changed! Hour: {currentHour}");
+            Debug.Log($"TimeManager: Hour changed! Hour: {currentHour}");
             onHourChanged?.Invoke(currentHour);
         }
 
@@ -149,14 +163,14 @@ public class TimeManager : MonoBehaviour
     {
         if (daysToSkip <= 0)
         {
-            Debug.LogWarning("Days to skip must be a positive number.");
+            Debug.LogWarning("TimeManager: Days to skip must be a positive number.");
             return;
         }
 
         for (int i = 0; i < daysToSkip; i++)
         {
             currentDay++;
-            Debug.Log($"Skipped to Day: {currentDay}");
+            Debug.Log($"TimeManager: Skipped to Day: {currentDay}");
             onDayChanged?.Invoke(currentDay);
         }
 
@@ -174,31 +188,37 @@ public class TimeManager : MonoBehaviour
     [Serializable]
     public class TimeData
     {
-        public float currentTimeInSeconds;
-        public int currentHour;
-        public int currentMinute;
-        public int currentDay;
+        public float td_currentTimeInSeconds;
+        public int td_currentHour;
+        public int td_currentMinute;
+        public int td_currentDay;
     }
 
     public TimeData GetTimeData()
     {
         return new TimeData()
         {
-            currentTimeInSeconds = this.currentTimeInSeconds,
-            currentHour = this.currentHour,
-            currentMinute = this.currentMinute,
-            currentDay = this.currentDay
+            td_currentTimeInSeconds = this.currentTimeInSeconds,
+            td_currentHour = this.currentHour,
+            td_currentMinute = this.currentMinute,
+            td_currentDay = this.currentDay
         };
     }
 
     public void SetTimeData(TimeData data)
     {
-        if (data == null) return;
+        if (data == null)
+        {
+            Debug.LogWarning("TimeManager: SetTimeData: data is null.");
+            Debug.LogError($"TimeManager: {data}");
+            return;
+        }
         
-        this.currentTimeInSeconds = data.currentTimeInSeconds;
-        this.currentHour = data.currentHour;
-        this.currentMinute = data.currentMinute;
-        this.currentDay = data.currentDay;
+        
+        this.currentTimeInSeconds = data.td_currentTimeInSeconds;
+        this.currentHour = data.td_currentHour;
+        this.currentMinute = data.td_currentMinute;
+        this.currentDay = data.td_currentDay;
         
         UpdateTimeDisplay();
         onHourChanged?.Invoke(currentHour);

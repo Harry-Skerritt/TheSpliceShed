@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9edad468657454391ba10d59200ef1, type: 3}
   m_Name: Rose
   m_EditorClassIdentifier: 
-  itemName: New Item
-  icon: {fileID: 0}
+  itemName: Rose
+  icon: {fileID: 21300000, guid: 7c220eae3d13eaa468e21dc555f1a9ff, type: 3}
   isStackable: 1
-  maxStackSize: 30
-  itemType: 4
+  maxStackSize: 50
+  requiredPotSize: 0
+  growthTime: 1.5
+  itemType: 1

@@ -36,8 +36,6 @@ public class PotUI : MonoBehaviour
     // Buttons
     private Color waterButtonColour;
     private Color harvestButtonColour;
-    private bool waterButtonActive = false;
-    private bool harvestButtonActive = false;
 
     
     private void Awake()
@@ -53,6 +51,8 @@ public class PotUI : MonoBehaviour
         }
         
         if(potInterfacePanel == null) Debug.LogError("PotUI: No UI Assigned!");
+        if(waterButton == null) Debug.LogError("PotUI: No Water Button Assigned!");
+        if(harvestButton == null) Debug.LogError("PotUI: No Harvest Button Assigned!");
     }
 
     private void Start()
@@ -69,6 +69,9 @@ public class PotUI : MonoBehaviour
                 droplet.color = waterEmpty;
             }
         }
+        
+        waterButtonColour = waterButton.image.color;
+        harvestButtonColour = harvestButton.image.color;
         
         ResetPanel();
         SetupButtonListeners();
@@ -89,28 +92,28 @@ public class PotUI : MonoBehaviour
                 {
                     if (currentlySelectedPot.GetWaterLevel() < waterStatus.Length)
                     {
-                        waterButtonActive = true;
-                        waterButton.GetComponent<Image>().color = waterButtonColour;
+                        waterButton.interactable = true;
+                        waterButton.image.color = waterButtonColour;
                     }
                     else
                     {
-                        waterButtonActive = false;
+                        waterButton.interactable = false;
                         Color buttonDisabledColour = waterButtonColour;
                         buttonDisabledColour.a = buttonDisabledAlpha;
-                        waterButton.GetComponent<Image>().color = buttonDisabledColour;
+                        waterButton.image.color = buttonDisabledColour;
                     }
 
                     if (currentlySelectedPot.GetReadyToHarvest())
                     {
-                        harvestButtonActive = true;
-                        harvestButton.GetComponent<Image>().color = harvestButtonColour;
+                        waterButton.interactable = true;
+                        harvestButton.image.color = harvestButtonColour;
                     }
                     else
                     {
-                        harvestButtonActive = false;
+                        waterButton.interactable = false;
                         Color buttonDisabledColour = harvestButtonColour;
                         buttonDisabledColour.a = buttonDisabledAlpha;
-                        harvestButton.GetComponent<Image>().color = buttonDisabledColour;
+                        harvestButton.image.color = buttonDisabledColour;
                     }
                     
                     CalculateWaterLevel(currentlySelectedPot);
@@ -270,7 +273,7 @@ public class PotUI : MonoBehaviour
 
     private void WaterPlants()
     {
-        if (waterButtonActive)
+        if (waterButton.interactable)
         {
             currentlySelectedPot.WaterPlant();
         }
@@ -278,7 +281,7 @@ public class PotUI : MonoBehaviour
 
     private void HarvestPlants()
     {
-        if (harvestButtonActive)
+        if (harvestButton.interactable)
         {
             currentlySelectedPot.HarvestItem();
         }
@@ -345,16 +348,27 @@ public class PotUI : MonoBehaviour
         {
             return -1;
         }
+
+
+        long absoluteBirthTimeS
+            = (long)pot.GetBirthDay() * TimeManager.SECONDS_IN_A_DAY + (long)pot.GetBirthTime();
         
-        long absoluteLastHarvestS =
-            (long)pot.GetLastHarvestD() * TimeManager.SECONDS_IN_A_DAY + (long)pot.GetLastHarvestS();
-            
         long absoluteCurrentS = (long)TimeManager.Instance.CurrentDay * TimeManager.SECONDS_IN_A_DAY + (long)TimeManager.Instance.CurrentTimeInSeconds;
         
         long growthTimeS = (long)(pot.GetPlantGrowing().growthTime * TimeManager.SECONDS_IN_A_DAY);
 
+        long timeRemainingS;
+        
+        if (absoluteBirthTimeS < growthTimeS)
+        {
+            // New Plant
+            timeRemainingS = growthTimeS - absoluteCurrentS;
+            return (long)Mathf.Max(0, timeRemainingS);
+        }
+        
+        long absoluteLastHarvestS = (long)pot.GetLastHarvestD() * TimeManager.SECONDS_IN_A_DAY + (long)pot.GetLastHarvestS();
         long absoluteTargetHarvestS = absoluteLastHarvestS + growthTimeS;
-        long timeRemainingS = absoluteTargetHarvestS - absoluteCurrentS;
+        timeRemainingS = absoluteTargetHarvestS - absoluteCurrentS;
             
         return (long)Mathf.Max(0, timeRemainingS);
     }
@@ -378,5 +392,13 @@ public class PotUI : MonoBehaviour
         result += $"{hours:00}:{minutes:00}"; // Always show HH:MM
 
         return result.Trim();
+    }
+
+    private void OnDestroy()
+    {
+        if (currentlySelectedPot != null)
+        {
+            currentlySelectedPot.SetSelectedVisual(false);
+        }
     }
 }

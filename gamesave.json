@@ -1,686 +1,31 @@
 {
     "timeData": {
-        "td_currentTimeInSeconds": 13750.8935546875,
-        "td_currentHour": 3,
-        "td_currentMinute": 49,
-        "td_currentDay": 5
+        "td_currentTimeInSeconds": 39222.74609375,
+        "td_currentHour": 10,
+        "td_currentMinute": 53,
+        "td_currentDay": 6
     },
     "inventoryData": {
         "slots": [
             {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
-            },
-            {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
+                "itemName": "Rose",
+                "quantity": 22,
+                "itemType": 1,
+                "iconName": "RoseFlower",
+                "isStackable": true,
+                "maxStackSize": 50,
+                "requiredPotSize": 0,
+                "growthTime": 0.5
             },
             {
-                "itemName": "",
-                "quantity": 0,
-                "itemType": 0,
-                "iconName": "",
-                "isStackable": false,
-                "maxStackSize": 0,
-                "requiredPotSize": 0
+                "itemName": "Potato",
+                "quantity": 2,
+                "itemType": 2,
+                "iconName": "PotatoVeg",
+                "isStackable": true,
+                "maxStackSize": 100,
+                "requiredPotSize": 0,
+                "growthTime": 0.5
             },
             {
                 "itemName": "",
@@ -689,7 +34,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -698,7 +44,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -707,7 +54,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -716,7 +64,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -725,7 +74,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -734,7 +84,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -743,7 +94,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -752,7 +104,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -761,7 +114,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -770,7 +124,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -779,7 +134,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -788,7 +144,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -797,7 +154,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -806,7 +164,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -815,7 +174,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -824,7 +184,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -833,7 +194,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -842,7 +204,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -851,7 +214,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -860,7 +224,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -869,7 +234,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -878,7 +244,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -887,7 +254,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -896,7 +264,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -905,7 +274,8 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             },
             {
                 "itemName": "",
@@ -914,43 +284,76 @@
                 "iconName": "",
                 "isStackable": false,
                 "maxStackSize": 0,
-                "requiredPotSize": 0
+                "requiredPotSize": 0,
+                "growthTime": 0.0
             }
         ]
     },
     "potData": {
         "pots": [
             {
-                "potId": "Pot_b8e5d5ee",
-                "potSize": 0,
-                "plantGrowingName": "",
-                "potEmpty": true,
-                "waterLevel": 5.0,
-                "plantAge": 0,
+                "potId": "Pot_b373c5f5",
+                "potSize": 2,
+                "plantGrowingName": "Potato",
+                "potEmpty": false,
+                "readyToHarvest": false,
+                "waterLevel": 0.0,
+                "plantAge": 6,
                 "ageInHours": true,
-                "birthTime": 0.0,
-                "birthDay": 0,
-                "plantName": "",
-                "plantType": 0,
-                "positionX": -4.949999809265137,
-                "positionY": -2.940000057220459,
+                "birthTime": 16108.07421875,
+                "birthDay": 6,
+                "plantName": "Potato",
+                "plantType": 2,
+                "lastHarvestS": 19545.505859375,
+                "lastHarvestD": 6,
+                "drainRate": 0.0,
+                "lastCalculatedHour": 10,
+                "positionX": -4.949951171875,
+                "positionY": -2.9276123046875,
                 "positionZ": 0.0,
                 "rotationY": 0.0
             },
             {
-                "potId": "Pot_f29ac0cb",
-                "potSize": 2,
-                "plantGrowingName": "",
-                "potEmpty": true,
-                "waterLevel": 2.390000104904175,
-                "plantAge": 0,
+                "potId": "Pot_f8a6bc8a",
+                "potSize": 1,
+                "plantGrowingName": "Rose",
+                "potEmpty": false,
+                "readyToHarvest": false,
+                "waterLevel": 0.0,
+                "plantAge": 1,
+                "ageInHours": false,
+                "birthTime": 20570.15234375,
+                "birthDay": 5,
+                "plantName": "Rose",
+                "plantType": 1,
+                "lastHarvestS": 75999.1171875,
+                "lastHarvestD": 5,
+                "drainRate": 0.0,
+                "lastCalculatedHour": 10,
+                "positionX": 5.8409423828125,
+                "positionY": -2.49761962890625,
+                "positionZ": 0.0,
+                "rotationY": 0.0
+            },
+            {
+                "potId": "Pot_97f5d626",
+                "potSize": 0,
+                "plantGrowingName": "Rose",
+                "potEmpty": false,
+                "readyToHarvest": false,
+                "waterLevel": 0.0,
+                "plantAge": 15,
                 "ageInHours": true,
-                "birthTime": 0.0,
-                "birthDay": 0,
-                "plantName": "",
-                "plantType": 0,
-                "positionX": 5.239999771118164,
-                "positionY": -2.940000057220459,
+                "birthTime": 69604.8203125,
+                "birthDay": 5,
+                "plantName": "Rose",
+                "plantType": 1,
+                "lastHarvestS": 6541.21240234375,
+                "lastHarvestD": 6,
+                "drainRate": 0.0,
+                "lastCalculatedHour": 10,
+                "positionX": -1.458984375,
+                "positionY": -2.9276123046875,
                 "positionZ": 0.0,
                 "rotationY": 0.0
             }
