@@ -316,7 +316,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
             {
                 if (PlantSomethingUI.Instance != null)
                 {
-                    PlantSomethingUI.Instance.OnPlantSomethingRequested(this);
+                    PlantSomethingUI.Instance.OnPotClicked(this);
                    // spriteRenderer.sortingLayerName = selectedSortingLayer;
                     if (InventoryManager.Instance != null)
                     {

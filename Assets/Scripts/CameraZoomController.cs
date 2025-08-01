@@ -65,6 +65,7 @@ public class CameraZoomController : MonoBehaviour
         if (target != null)
         {
             Vector3 targetPosition = target.transform.position;
+            targetPosition = new Vector3(targetPosition.x, targetPosition.y + yOffset, targetPosition.z);
             StartCoroutine(AnimateZoom(targetPosition, zoomOrthographicSize));
         }
         else
@@ -90,7 +91,6 @@ public class CameraZoomController : MonoBehaviour
 
         Vector3 startPosition = transform.position;
         float startOrthographicSize = mainCamera.orthographicSize;
-        targetPosition = new Vector3(targetPosition.x, targetPosition.y + yOffset, targetPosition.z);
 
         while (elapsedTime < zoomDuration)
         {

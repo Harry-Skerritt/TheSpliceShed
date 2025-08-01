@@ -147,9 +147,29 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
         }
     }
     
-    public void OnPlantSomethingRequested(Pot pot)
+    public void OnPotClicked(Pot clickedPot)
     {
-        currentlySelectedPot = pot;
+        if (currentlySelectedPot != null && currentlySelectedPot != clickedPot)
+        {
+            currentlySelectedPot.SetSelectedVisual(false);
+        }
+
+        currentlySelectedPot = clickedPot;
+
+        if (currentlySelectedPot != null)
+        {
+            currentlySelectedPot.SetSelectedVisual(true);
+            OnPlantSomethingRequested(currentlySelectedPot);
+        }
+        else
+        {
+            ClosePanel();
+        }
+
+    }
+    
+    private void OnPlantSomethingRequested(Pot pot)
+    {
         ResetPanel();
         ShowPanel();
         
