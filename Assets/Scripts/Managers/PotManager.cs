@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,9 +10,15 @@ public class PotManager : MonoBehaviour
 {
     public static PotManager Instance { get; private set; }
 
+    [Header("Pot Colours")]
     [SerializeField] private Color hoverColour;
     [SerializeField] private Color selectedColour;
+
+    [Header("Tooltip")]
+    [SerializeField] private Canvas mainCanvas;
+    [SerializeField] private TextMeshProUGUI potTooltip;
     
+    [Header("Pot Info")]
     [SerializeField] private GameObject potPrefab;
     [SerializeField] private Transform[] potLocations;
     [SerializeField] private int potsToCreate;
@@ -62,6 +69,7 @@ public class PotManager : MonoBehaviour
                     potGO.name = newPotID;
                     potComponent.SetPotID(newPotID);
                     potComponent.SetPotColours(selectedColour, hoverColour);
+                    potComponent.SetupTooltip(mainCanvas, potTooltip);
                     potList.Add(potComponent);
                     potDict.Add(newPotID, potComponent);
                     Debug.Log($"PotManager: {potGO.name} created at {location.position} successfully!");
@@ -159,6 +167,7 @@ public class PotManager : MonoBehaviour
                 potComponent.SetPotID(loadedPotState.potId);
                 potComponent.SetPotColours(selectedColour, hoverColour);
                 potComponent.SetPotState(loadedPotState);
+                potComponent.SetupTooltip(mainCanvas, potTooltip);
                 
                 potList.Add(potComponent);
                 potDict.Add(loadedPotState.potId, potComponent);
@@ -190,6 +199,7 @@ public class PotManager : MonoBehaviour
                     potGO.name = newPotID;
                     potComponent.SetPotID(newPotID);
                     potComponent.SetPotColours(selectedColour, hoverColour);
+                    potComponent.SetupTooltip(mainCanvas, potTooltip);
                     // Pot will be initialized as empty by default
                     potList.Add(potComponent);
                     potDict.Add(newPotID, potComponent);

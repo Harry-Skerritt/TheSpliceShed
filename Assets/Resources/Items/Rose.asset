@@ -18,4 +18,5 @@ MonoBehaviour:
   maxStackSize: 50
   requiredPotSize: 0
   growthTime: 1.5
+  drainRate: 0.1
   itemType: 1

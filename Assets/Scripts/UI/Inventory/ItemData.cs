@@ -12,6 +12,7 @@ public class ItemData : ScriptableObject
     public int maxStackSize = 100;
     [UnityEngine.Range(0, 2)] public int requiredPotSize = 0;
     [UnityEngine.Range(0, 20)] public float growthTime = 0.5f; // In days 
+    [UnityEngine.Range(0.0f, 1.0f)] public float drainRate = 0.5f;
     
     public ItemType itemType = ItemType.Misc;
 }

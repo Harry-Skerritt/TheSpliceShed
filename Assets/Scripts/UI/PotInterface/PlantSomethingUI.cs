@@ -143,7 +143,7 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
         }
         title.text = $"{potSizeString} Ceramic Pot ({currentlySelectedPot.GetPotID()})";
 
-        if (!currentlySelectedPot.GetPotEmpty())
+        if(currentlySelectedPot.GetPotStatus() != PotStatus.Empty)
         {
             DisplayMessage("This pot is not empty!");
             plantButton.interactable = false;
@@ -167,7 +167,7 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
             return;
         }
 
-        if (!currentlySelectedPot.GetPotEmpty())
+        if(currentlySelectedPot.GetPotStatus() != PotStatus.Empty)
         {
             Debug.LogWarning($"PlantSomethingUI: {currentlySelectedPot.GetPotID()} is not empty");
             DisplayMessage("This pot already has a plant!");
@@ -283,7 +283,7 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
         bool canPlant = (plantedItemDataCandidate != null && 
                          plantedItemDataCandidate.itemType != ItemType.Misc && 
                          currentlySelectedPot != null && 
-                         currentlySelectedPot.GetPotEmpty());
+                         currentlySelectedPot.GetPotStatus() == PotStatus.Empty);
 
         plantButton.interactable = canPlant;
         if (plantButton.image != null)
@@ -327,6 +327,11 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
         {
             currentlySelectedPot.SetSelectedVisual(false); // Tell the pot to unselect its visual
             currentlySelectedPot = null; // Clear the reference
+        }
+
+        if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.SetInventoryVisible(false);
         }
         
         if (plantedItemDataCandidate != null)

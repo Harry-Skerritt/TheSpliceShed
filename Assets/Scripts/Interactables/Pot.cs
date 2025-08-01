@@ -1,21 +1,36 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public enum PotStatus
+{
+    Empty,
+    Planted,
+    ReadyToHarvest
+}
+
+public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerMoveHandler
 {
     [Header("Pot Details")] 
     [SerializeField] [Range(0, 2)] private int potSize = 1;                 // Pot Size: 0: Small, 1: Normal, 2: Large
     [Tooltip("The itemData plant present")]
     [SerializeField] private ItemData plantGrowing;                         // ItemData of the planted plant
-    [SerializeField] private bool potEmpty = true;                          // Is the pot empty
-    [SerializeField] private bool readyToHarvest = false;                   // Is the pot ready for harvest
-    [Range(0.0f, 5.0f)][SerializeField] private float waterLevel = 0.0f;    // The water level of the plant
+    [SerializeField] private PotStatus potStatus;                           // Enum holding the current status of the pot
+    [Range(0.0f, 5.0f)][SerializeField] private float waterLevel;    // The water level of the plant
     [SerializeField] private int plantAge;                                  // Age of the plant (in h or d)
     [SerializeField] private bool ageInHours = true;                        // Age in Hours (T) or Days (F)
-    [Range(0.0f, 1.0f)][SerializeField] private float drainRate = 0.5f;     // Rate at which pots drain water
+
+    [Header("UI & Visuals")]
+    [SerializeField] private TextMeshProUGUI tooltipText;
+    [SerializeField] private Canvas mainUICanvas;
+    [SerializeField] private ParticleSystem readyToHarvestParticles;
+    [SerializeField] private ParticleSystem noWaterParticles;
+    [SerializeField] private string initialSortingLayer;
+    [SerializeField] private string selectedSortingLayer;
+
+    private RectTransform tooltipRect;
     
     private string potId = "PotNone";                                       // Unique Pot ID
     private string plantName;                                               // Name of plant
@@ -38,11 +53,12 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
     private int lastCalculatedHour = -1;                                    // Tracks when age/water was calculated
 
     private PotManager potManager;
+    private GameObject currentTooltip;
     
     public int GetPotSize() => potSize;
     public ItemData GetPlantGrowing() => plantGrowing;
-    public bool GetPotEmpty() => potEmpty;
-    public bool GetReadyToHarvest() => readyToHarvest;
+
+    public PotStatus GetPotStatus() => potStatus;
     public float GetWaterLevel() => waterLevel;
     public int GetPlantAge() => plantAge;
     public bool GetAgeInHours() => ageInHours;
@@ -78,12 +94,40 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         }
         
         spriteRenderer.color = baseColour;
+        spriteRenderer.sortingLayerName = initialSortingLayer;
+        
+        if (tooltipText != null)
+        {
+            tooltipRect = tooltipText.GetComponent<RectTransform>();
+            tooltipText.gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError($"{potId}: Tooltip TextMeshProUGUI is not assigned");
+        }
+    }
+
+    private void Start()
+    {
+        if (readyToHarvestParticles != null) readyToHarvestParticles.Stop();
+        if (noWaterParticles != null) noWaterParticles.Stop();
+        
+        // Init the Tooltip Pos
+        Vector2 pos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            mainUICanvas.transform as RectTransform,
+            Input.mousePosition,
+            mainUICanvas.worldCamera,
+            out pos);
+        
     }
 
     private void Update()
     {
-        if (potEmpty || TimeManager.Instance == null) return;
+        if ((potStatus == PotStatus.Empty) || TimeManager.Instance == null) return;
 
+        UpdateParticles();
+        
         // Calc age
         long currentAbsoluteHours = (long)TimeManager.Instance.CurrentDay * 24 + TimeManager.Instance.CurrentHour;
         long birthAbsoluteHours = (long)birthDay * 24 + (long)(birthTime / TimeManager.SECONDS_IN_AN_HOUR);
@@ -104,116 +148,30 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         // Drain Water
         if (TimeManager.Instance.CurrentHour != lastCalculatedHour)
         {
-            waterLevel = Mathf.Max(0.0f, waterLevel - drainRate);
+            waterLevel = Mathf.Max(0.0f, waterLevel - plantGrowing.drainRate);
             lastCalculatedHour = TimeManager.Instance.CurrentHour;
             Debug.Log($"{potId}: Water drained to {waterLevel}. Plant age: {plantAge} {(ageInHours ? "hours" : "days")}");
         }
+
+        
     }
 
     public void SetReadyToHarvest(bool ready)
     {
-        readyToHarvest = ready;
-    }
-    
-    // Interaction Handling
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (!isCurrentlySelected)
+        if (ready)
         {
-            if(hoverCoroutine != null) StopCoroutine(hoverCoroutine);
-            hoverCoroutine = StartCoroutine(LerpColour(hoverColour));
-        }
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (!isCurrentlySelected)
-        {
-            if(hoverCoroutine != null) StopCoroutine(hoverCoroutine);
-            hoverCoroutine = StartCoroutine(LerpColour(baseColour));
-        }
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            Debug.Log($"{potId}: Pot Clicked!");
-            if (potEmpty)
-            {
-                if (EmptyPotUI.Instance != null)
-                {
-                    EmptyPotUI.Instance.OnEmptyPotClicked(this);
-                }
-                else
-                {
-                    Debug.LogWarning($"{potId}: EmptyPotUI.Instance is null");
-                }
-            }
-            else
-            {
-                if (PotUI.Instance != null)
-                {
-                    PotUI.Instance.OnPotClicked(this);
-                }
-                else
-                {
-                    Debug.LogWarning($"{potId}: PotUI.Instance is null");
-                }
-            }
-        }
-        else if (eventData.button == PointerEventData.InputButton.Right) 
-        { 
-            Debug.Log($"{potId}: Pot was right Clicked");   
-        }
-    }
-    
-    // State Control
-    public void SetSelectedVisual(bool selected)
-    {
-        isCurrentlySelected = selected;
-        if(hoverCoroutine != null) StopCoroutine(hoverCoroutine);
-
-        if (selected)
-        {
-            spriteRenderer.color = selectedColour;
+            potStatus = PotStatus.ReadyToHarvest;
         }
         else
         {
-            spriteRenderer.color = baseColour;
+            // Assume pot still has plant
+            potStatus = PotStatus.Planted;
         }
-    }
-
-    private IEnumerator LerpColour(Color colour)
-    {
-        Color startColour = spriteRenderer.color;
-        float elapsedTime = 0.0f;
-        
-        while (elapsedTime < colourChangeDuration)
-        {
-            spriteRenderer.color = Color.Lerp(startColour, colour, elapsedTime / colourChangeDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        spriteRenderer.color = colour;
-        hoverCoroutine = null;
-    }
-
-    public void SetPotColours(Color selected, Color hovered)
-    {
-        selectedColour = selected;
-        hoverColour = hovered;
-    }
-
-    public void SetPotID(string id)
-    {
-        potId = id;
-        gameObject.name = potId;
     }
     
     public bool PlantItem(ItemData plant)
     {
-        if (!potEmpty)
+        if (potStatus != PotStatus.Empty)
         {
             Debug.LogWarning($"{potId}: Pot is not empty! Cannot plant new item!");
             return false;
@@ -244,7 +202,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         }
         
         plantGrowing = plant;       // Set plant itemData
-        potEmpty = false;
+        potStatus = PotStatus.Planted;
         plantName = plant.itemName; // Set plant name
         plantType = plant.itemType; // Set plant type
 
@@ -268,13 +226,243 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         lastHarvestS = TimeManager.Instance.CurrentTimeInSeconds;
         lastHarvestD = TimeManager.Instance.CurrentDay;
         
-        waterLevel = 0.0f; // Set water to 0
+        waterLevel = Mathf.Max(0.0f, waterLevel - 2.0f); // Reduce Water by 2 //Todo: Decide whether to keep this
 
+        potStatus = PotStatus.Planted; // Not ready to harvest
+        
         InventoryManager.Instance.AddItem(plantGrowing, 1); //Todo: Change quantity to be random per level of plant
 
         // Todo: See what else needs to be in here
     }
     
+    // Interaction Handling
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!isCurrentlySelected)
+        {
+            if(hoverCoroutine != null) StopCoroutine(hoverCoroutine);
+            hoverCoroutine = StartCoroutine(LerpColour(hoverColour));
+            ShowTooltip();
+        }
+    }
+
+    public void OnPointerMove(PointerEventData eventData)
+    {
+        if (tooltipRect != null && mainUICanvas != null)
+        {
+            Vector2 mouseLocalPos;
+            Camera uiCamera = (mainUICanvas.renderMode == RenderMode.ScreenSpaceOverlay) ? null : mainUICanvas.worldCamera;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                mainUICanvas.GetComponent<RectTransform>(),
+                Input.mousePosition,
+                uiCamera,
+                out mouseLocalPos);
+
+            tooltipRect.anchoredPosition = new Vector2(mouseLocalPos.x, mouseLocalPos.y + 20);
+        }
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (!isCurrentlySelected)
+        {
+            if(hoverCoroutine != null) StopCoroutine(hoverCoroutine);
+            hoverCoroutine = StartCoroutine(LerpColour(baseColour));
+            HideTooltip();
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            Debug.Log($"{potId}: Pot Clicked!");
+            if ((potStatus == PotStatus.Empty))
+            {
+                if (PlantSomethingUI.Instance != null)
+                {
+                    PlantSomethingUI.Instance.OnPlantSomethingRequested(this);
+                   // spriteRenderer.sortingLayerName = selectedSortingLayer;
+                    if (InventoryManager.Instance != null)
+                    {
+                        InventoryManager.Instance.SetInventoryVisible(true);
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"{potId}: InventoryManager.Instance is null");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"{potId}: PlantSomethingUI.Instance is null");
+                }
+            }
+            else
+            {
+                if (PotUI.Instance != null)
+                {
+                    PotUI.Instance.OnPotClicked(this);
+                    //spriteRenderer.sortingLayerName = selectedSortingLayer;
+                }
+                else
+                {
+                    Debug.LogWarning($"{potId}: PotUI.Instance is null");
+                }
+            }
+        }
+        else if (eventData.button == PointerEventData.InputButton.Right) 
+        { 
+            Debug.Log($"{potId}: Pot was right Clicked");
+
+            if (potStatus == PotStatus.ReadyToHarvest)
+            {
+                HarvestItem();
+            }
+            
+        }
+    }
+    
+    
+    
+    // State Control
+    public void SetSelectedVisual(bool selected)
+    {
+        isCurrentlySelected = selected;
+        if(hoverCoroutine != null) StopCoroutine(hoverCoroutine);
+
+        if (selected)
+        {
+            spriteRenderer.color = selectedColour;
+            spriteRenderer.sortingLayerName = selectedSortingLayer;
+            tooltipText.gameObject.SetActive(false);
+        }
+        else
+        {
+            spriteRenderer.color = baseColour;
+            spriteRenderer.sortingLayerName = initialSortingLayer;
+        }
+    }
+
+    private IEnumerator LerpColour(Color colour)
+    {
+        Color startColour = spriteRenderer.color;
+        float elapsedTime = 0.0f;
+        
+        while (elapsedTime < colourChangeDuration)
+        {
+            spriteRenderer.color = Color.Lerp(startColour, colour, elapsedTime / colourChangeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        spriteRenderer.color = colour;
+        hoverCoroutine = null;
+    }
+
+    public void SetPotColours(Color selected, Color hovered)
+    {
+        selectedColour = selected;
+        hoverColour = hovered;
+    }
+
+    public void SetPotID(string id)
+    {
+        potId = id;
+        gameObject.name = potId;
+    }
+
+    public void SetupTooltip(Canvas canvas, TextMeshProUGUI tooltip)
+    {
+        mainUICanvas = canvas;
+        tooltipText = tooltip;
+        tooltipRect = tooltipText.GetComponent<RectTransform>();
+    }
+
+
+    private void ShowTooltip()
+    {
+        if (tooltipText != null)
+        {
+            tooltipText.text = GetTooltipText();
+            tooltipText.gameObject.SetActive(true);   
+        }
+        else
+        {
+            Debug.LogWarning($"{potId}: Tooltip TextMeshProUGUI is null");
+        }
+    }
+
+    private void HideTooltip()
+    {
+        if (tooltipText != null)
+        {
+            tooltipText.gameObject.SetActive(false);   
+        }
+        else
+        {
+            Debug.LogWarning($"{potId}: Tooltip TextMeshProUGUI is null");
+        }
+    }
+
+    private string GetTooltipText()
+    {
+        if (waterLevel == 0.0f)
+        {
+            return "Plant has no water!";
+        }
+        
+        switch (potStatus)
+        {
+            case PotStatus.Empty:
+                return "Empty";
+            case PotStatus.ReadyToHarvest:
+                return $"Harvest {plantName}";
+            case PotStatus.Planted:
+                return $"{plantName} | HH:MM";
+            default:
+                return "Unknown";
+        }
+    }
+
+    private void UpdateParticles()
+    {
+        bool isPlantedAndNotWatered = potStatus == PotStatus.Planted && waterLevel == 0.0f;
+
+        if (readyToHarvestParticles != null && noWaterParticles != null)
+        {
+            if (potStatus == PotStatus.Empty)
+            {
+                if (readyToHarvestParticles.isPlaying) readyToHarvestParticles.Stop();
+                if (noWaterParticles.isPlaying) noWaterParticles.Stop();
+            }
+        }
+        
+        if (readyToHarvestParticles != null)
+        {
+            if (potStatus == PotStatus.ReadyToHarvest)
+            {
+                if (!readyToHarvestParticles.isPlaying) readyToHarvestParticles.Play();
+            }
+            else
+            {
+                if (readyToHarvestParticles.isPlaying) readyToHarvestParticles.Stop();
+            }
+        }
+        
+        if (noWaterParticles != null)
+        {
+            if (isPlantedAndNotWatered)
+            {
+                if (!noWaterParticles.isPlaying) noWaterParticles.Play();
+            }
+            else
+            {
+                if (noWaterParticles.isPlaying) noWaterParticles.Stop();
+            }
+        }
+    }
+
+
     // Save System Integrations
     [Serializable]
     public struct PotState
@@ -282,8 +470,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         public string potId;
         public int potSize;
         public string plantGrowingName;
-        public bool potEmpty;
-        public bool readyToHarvest;
+        public PotStatus potStatus;
         public float waterLevel;
         public int plantAge;
         public bool ageInHours;
@@ -293,7 +480,6 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         public ItemType plantType;
         public float lastHarvestS;
         public int lastHarvestD;
-        public float drainRate;
         public int lastCalculatedHour;
 
         public float positionX, positionY, positionZ;
@@ -304,8 +490,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
             potId = pot.potId;
             potSize = pot.potSize;
             plantGrowingName = (pot.plantGrowing != null) ? pot.plantGrowing.itemName : "";
-            potEmpty = pot.potEmpty;
-            readyToHarvest = pot.readyToHarvest;
+            potStatus = pot.potStatus;
             waterLevel = pot.waterLevel;
             plantAge = pot.plantAge;
             ageInHours = pot.ageInHours;
@@ -315,7 +500,6 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
             plantType = pot.plantType;
             lastHarvestS = pot.lastHarvestS;
             lastHarvestD = pot.lastHarvestD;
-            drainRate = pot.drainRate;
             lastCalculatedHour = pot.lastCalculatedHour;
 
             positionX = pot.transform.position.x;
@@ -334,8 +518,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
     {
         potId = state.potId;
         potSize = state.potSize;
-        potEmpty = state.potEmpty;
-        readyToHarvest = state.readyToHarvest;
+        potStatus = state.potStatus;
         waterLevel = state.waterLevel;
         plantAge = state.plantAge;
         ageInHours = state.ageInHours;
@@ -345,7 +528,6 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         plantType = state.plantType;
         lastHarvestS = state.lastHarvestS;
         lastHarvestD = state.lastHarvestD;
-        drainRate = state.drainRate;
         lastCalculatedHour = state.lastCalculatedHour;
 
         // Load ItemData if a plant was growing
@@ -355,8 +537,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
             if (plantGrowing == null)
             {
                 Debug.LogWarning($"{potId}: Could not load ItemData '{state.plantGrowingName}'. Plant will be empty.");
-                potEmpty = true; // Mark as empty if item data can't be found
-                readyToHarvest = false;
+               potStatus = PotStatus.Empty;
             }
             else
             {
@@ -366,8 +547,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         else
         {
             plantGrowing = null;
-            potEmpty = true;
-            readyToHarvest = false;
+            potStatus = PotStatus.Empty;
         }
         
         // Might be unnecessary 

@@ -18,6 +18,10 @@ public class DevConsole : MonoBehaviour
     [Tooltip("The Text element where console output is displayed")] [SerializeField]
     private TextMeshProUGUI consoleOutputText;
 
+    private bool consoleVisible;
+    
+    public bool ConsoleVisible => consoleVisible;
+    
     private const int MAX_LINES = 12;
 
     void Awake()
@@ -41,6 +45,7 @@ public class DevConsole : MonoBehaviour
         if (consolePanel != null)
         {
             consolePanel.SetActive(false);
+            consoleVisible = false;
         }
 
         consoleOutputText.text = "";
@@ -62,6 +67,7 @@ public class DevConsole : MonoBehaviour
         {
             bool isActive = !consolePanel.activeSelf;
             consolePanel.SetActive(isActive);
+            consoleVisible = isActive;
 
             if (isActive)
             {

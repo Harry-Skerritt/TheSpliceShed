@@ -21,6 +21,8 @@ public class PotUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeUntilHarvest;
     [SerializeField] private Button waterButton;
     [SerializeField] private Button harvestButton;
+
+    [SerializeField] private ScreenDimmer screenDimmer;
     
     [Header("Water")]
     [SerializeField] private Image[] waterStatus;
@@ -32,6 +34,7 @@ public class PotUI : MonoBehaviour
     [Range(0.0f, 0.6f)][SerializeField] private float buttonDisabledAlpha;
     
     private Pot currentlySelectedPot;
+    
     
     // Buttons
     private Color waterButtonColour;
@@ -88,10 +91,11 @@ public class PotUI : MonoBehaviour
 
             if (currentlySelectedPot != null)
             {
-                if (!currentlySelectedPot.GetPotEmpty())
+                if(currentlySelectedPot.GetPotStatus() != PotStatus.Empty)
                 {
-                    if (currentlySelectedPot.GetWaterLevel() < waterStatus.Length)
+                    if (currentlySelectedPot.GetWaterLevel() < 5.0f)
                     {
+                        
                         waterButton.interactable = true;
                         waterButton.image.color = waterButtonColour;
                     }
@@ -103,14 +107,14 @@ public class PotUI : MonoBehaviour
                         waterButton.image.color = buttonDisabledColour;
                     }
 
-                    if (currentlySelectedPot.GetReadyToHarvest())
+                    if(currentlySelectedPot.GetPotStatus() == PotStatus.ReadyToHarvest)
                     {
-                        waterButton.interactable = true;
+                        harvestButton.interactable = true;
                         harvestButton.image.color = harvestButtonColour;
                     }
                     else
                     {
-                        waterButton.interactable = false;
+                        harvestButton.interactable = false;
                         Color buttonDisabledColour = harvestButtonColour;
                         buttonDisabledColour.a = buttonDisabledAlpha;
                         harvestButton.image.color = buttonDisabledColour;
@@ -183,6 +187,11 @@ public class PotUI : MonoBehaviour
        ResetPanel();
        
        potInterfacePanel.SetActive(true);
+
+       if (screenDimmer != null)
+       {
+           screenDimmer.FadeIn();
+       }
        
         
         // Title Size
@@ -197,7 +206,7 @@ public class PotUI : MonoBehaviour
         title.text = $"{potSizeString} Ceramic Pot";
         
         // Plant Details
-        if (!pot.GetPotEmpty() && pot.GetPlantGrowing() != null)
+        if((currentlySelectedPot.GetPotStatus() != PotStatus.Empty) && pot.GetPlantGrowing() != null)
         {
             // Icon
             currentlyGrowingIcon.sprite = pot.GetPlantGrowing().icon;
@@ -269,6 +278,11 @@ public class PotUI : MonoBehaviour
             currentlySelectedPot = null; // Clear the reference
         }
         ResetPanel(); // Ensure all fields are reset
+        
+        if (screenDimmer != null)
+        {
+            screenDimmer.FadeOut();
+        }
     }
 
     private void WaterPlants()

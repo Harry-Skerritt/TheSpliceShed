@@ -5,6 +5,7 @@ using JetBrains.Annotations;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
@@ -12,6 +13,10 @@ public class InventoryManager : MonoBehaviour
 
     public static InventoryManager Instance { get; private set; }
 
+    [Header("Scene Names")] 
+    [SerializeField] private string gardenSceneName;
+    
+    
     [Header("UI")] [Tooltip("The parent panel for the entire inventory UI.")] [SerializeField]
     private GameObject inventoryPanel;
 
@@ -99,6 +104,37 @@ public class InventoryManager : MonoBehaviour
         }
 
         SetFilter(currentFilter);
+        
+        // Hide Inventory on start
+        if (inventoryPanel != null)
+        {
+            inventoryPanel.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if (inventoryPanel != null)
+        {
+            if (!DevConsole.Instance.ConsoleVisible)
+            {
+                if (SceneManager.GetActiveScene().name == gardenSceneName)
+                {
+                    if (Input.GetKeyDown(KeyCode.I)) // Todo: Make global
+                    {
+                        inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+                    }
+                }
+            }
+        }
+    }
+
+    public void SetInventoryVisible(bool visible)
+    {
+        if (inventoryPanel != null)
+        {
+            inventoryPanel.SetActive(visible);
+        }
     }
 
     void GenerateInventorySlotsUI()
