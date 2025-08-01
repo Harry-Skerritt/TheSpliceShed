@@ -22,6 +22,8 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Button plantButton;
     [SerializeField] private TextMeshProUGUI errorText;
     
+    [SerializeField] private ScreenDimmer screenDimmer;
+    
     [Header("Water")]
     [SerializeField] private Image[] waterStatus;
     [SerializeField] private Color waterEmpty;
@@ -32,6 +34,7 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
     [Range(0.0f, 0.6f)][SerializeField] private float buttonDisabledAlpha;
     
     private Pot currentlySelectedPot;
+    private UIFadeTransition uiFadeTransition;
     private ItemData plantedItemDataCandidate;
     private Color plantButtonColour;
     private bool plantButtonActive = false;
@@ -56,6 +59,9 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
         {
             plantButtonColour = plantButton.image.color;
         }
+        
+        uiFadeTransition = potInterfacePanel.GetComponent<UIFadeTransition>();
+        potInterfacePanel.GetComponent<CanvasGroup>().alpha = 0;
         
     }
     
@@ -123,15 +129,29 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
         DisplayMessage("");
     }
 
+    private void ShowPanel()
+    {
+        // Show the panel
+        potInterfacePanel.SetActive(true);
+        
+        // Fade the screen dimmer
+        if (screenDimmer != null)
+        {
+            screenDimmer.FadeIn();
+        }
+        
+        // Fade the UI
+        if (uiFadeTransition != null)
+        {
+            uiFadeTransition.FadeIn();
+        }
+    }
+    
     public void OnPlantSomethingRequested(Pot pot)
     {
         currentlySelectedPot = pot;
         ResetPanel();
-
-        if (potInterfacePanel != null)
-        {
-            potInterfacePanel.SetActive(true);
-        }
+        ShowPanel();
         
         // Update Title
         string potSizeString = "Ceramic Pot";
@@ -321,6 +341,7 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
     {
         if (potInterfacePanel != null)
         {
+            potInterfacePanel.GetComponent<CanvasGroup>().alpha = 0;
             potInterfacePanel.SetActive(false);
         }
         if (currentlySelectedPot != null)
@@ -347,6 +368,12 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
             }
         }
         ResetPanel(); // Ensure all fields are reset
+        
+        if (screenDimmer != null)
+        {
+            screenDimmer.FadeOut();
+        }
+        
         Debug.Log("PlantSomethingUI: Panel closed.");
     }
     

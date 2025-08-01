@@ -27,8 +27,12 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
     [SerializeField] private Canvas mainUICanvas;
     [SerializeField] private ParticleSystem readyToHarvestParticles;
     [SerializeField] private ParticleSystem noWaterParticles;
+    
+    [Header("Sorting Layers")]
     [SerializeField] private string initialSortingLayer;
     [SerializeField] private string selectedSortingLayer;
+    [SerializeField] private string particleInitialSortingLayer;
+    [SerializeField] private string particleSelectedSortingLayer;
 
     private RectTransform tooltipRect;
     
@@ -94,7 +98,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         }
         
         spriteRenderer.color = baseColour;
-        spriteRenderer.sortingLayerName = initialSortingLayer;
+        SetSortingLayers(initialSortingLayer, particleInitialSortingLayer);
         
         if (tooltipText != null)
         {
@@ -105,6 +109,13 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         {
             Debug.LogError($"{potId}: Tooltip TextMeshProUGUI is not assigned");
         }
+    }
+
+    private void SetSortingLayers(string layerName, string layerNameParticles)
+    {
+        spriteRenderer.sortingLayerName = layerName;
+        noWaterParticles.GetComponent<ParticleSystemRenderer>().sortingLayerName = layerNameParticles;
+        readyToHarvestParticles.GetComponent<ParticleSystemRenderer>().sortingLayerName = layerNameParticles;
     }
 
     private void Start()
@@ -334,13 +345,15 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         if (selected)
         {
             spriteRenderer.color = selectedColour;
-            spriteRenderer.sortingLayerName = selectedSortingLayer;
+            SetSortingLayers(selectedSortingLayer, particleSelectedSortingLayer);
             tooltipText.gameObject.SetActive(false);
+            CameraZoomController.Instance.ZoomIn(gameObject);
         }
         else
         {
             spriteRenderer.color = baseColour;
-            spriteRenderer.sortingLayerName = initialSortingLayer;
+            SetSortingLayers(initialSortingLayer, particleInitialSortingLayer);
+            CameraZoomController.Instance.ZoomOut();
         }
     }
 

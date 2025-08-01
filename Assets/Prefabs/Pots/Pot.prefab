@@ -114,6 +114,8 @@ MonoBehaviour:
   noWaterParticles: {fileID: 6925549508258716124}
   initialSortingLayer: Default
   selectedSortingLayer: InfrontOfUI
+  particleInitialSortingLayer: Particles
+  particleSelectedSortingLayer: ParticlesInfrontOfUI
 --- !u!61 &1112257164504688084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3481269480616441871, guid: 296b0c6bc8c464048be4de392fb170d0, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3481269480616441871, guid: 296b0c6bc8c464048be4de392fb170d0, type: 3}
       propertyPath: m_SortingLayerID
@@ -309,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3481269480616441871, guid: 296b0c6bc8c464048be4de392fb170d0, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3481269480616441871, guid: 296b0c6bc8c464048be4de392fb170d0, type: 3}
       propertyPath: m_SortingLayerID

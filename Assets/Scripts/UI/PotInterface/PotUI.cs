@@ -35,6 +35,8 @@ public class PotUI : MonoBehaviour
     
     private Pot currentlySelectedPot;
     
+    private UIFadeTransition uiFadeTransition;
+    
     
     // Buttons
     private Color waterButtonColour;
@@ -56,6 +58,9 @@ public class PotUI : MonoBehaviour
         if(potInterfacePanel == null) Debug.LogError("PotUI: No UI Assigned!");
         if(waterButton == null) Debug.LogError("PotUI: No Water Button Assigned!");
         if(harvestButton == null) Debug.LogError("PotUI: No Harvest Button Assigned!");
+
+        uiFadeTransition = potInterfacePanel.GetComponent<UIFadeTransition>();
+        potInterfacePanel.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     private void Start()
@@ -182,17 +187,29 @@ public class PotUI : MonoBehaviour
         }
 
     }
+
+    private void ShowPanel()
+    {
+        // Show the panel
+        potInterfacePanel.SetActive(true);
+        
+        // Fade the screen dimmer
+        if (screenDimmer != null)
+        {
+            screenDimmer.FadeIn();
+        }
+        
+        // Fade the UI
+        if (uiFadeTransition != null)
+        {
+            uiFadeTransition.FadeIn();
+        }
+    }
+    
     private void PopulatePanel(Pot pot)
     {
        ResetPanel();
-       
-       potInterfacePanel.SetActive(true);
-
-       if (screenDimmer != null)
-       {
-           screenDimmer.FadeIn();
-       }
-       
+       ShowPanel();
         
         // Title Size
         string potSizeString = "Ceramic Pot";
@@ -270,8 +287,10 @@ public class PotUI : MonoBehaviour
     {
         if (potInterfacePanel != null)
         {
+            potInterfacePanel.GetComponent<CanvasGroup>().alpha = 0;
             potInterfacePanel.SetActive(false);
         }
+        
         if (currentlySelectedPot != null)
         {
             currentlySelectedPot.SetSelectedVisual(false); // Tell the pot to unselect its visual
