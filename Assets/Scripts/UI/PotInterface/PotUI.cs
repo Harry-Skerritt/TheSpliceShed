@@ -21,6 +21,7 @@ public class PotUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeUntilHarvest;
     [SerializeField] private Button waterButton;
     [SerializeField] private Button harvestButton;
+    [SerializeField] private Button unplantButton;
 
     [SerializeField] private ScreenDimmer screenDimmer;
     
@@ -58,6 +59,7 @@ public class PotUI : MonoBehaviour
         if(potInterfacePanel == null) Debug.LogError("PotUI: No UI Assigned!");
         if(waterButton == null) Debug.LogError("PotUI: No Water Button Assigned!");
         if(harvestButton == null) Debug.LogError("PotUI: No Harvest Button Assigned!");
+        if(unplantButton == null) Debug.LogError("PotUI: No Unplant Button Assigned!");
 
         uiFadeTransition = potInterfacePanel.GetComponent<UIFadeTransition>();
         potInterfacePanel.GetComponent<CanvasGroup>().alpha = 0;
@@ -96,11 +98,21 @@ public class PotUI : MonoBehaviour
 
             if (currentlySelectedPot != null)
             {
+                // Hide unplant button unless pot not empty
+                if (unplantButton != null)
+                {
+                    unplantButton.gameObject.SetActive(false);
+                }
+                
                 if(currentlySelectedPot.GetPotStatus() != PotStatus.Empty)
                 {
+                    if (unplantButton != null)
+                    {
+                        unplantButton.gameObject.SetActive(true);
+                    }
+                    
                     if (currentlySelectedPot.GetWaterLevel() < 5.0f)
                     {
-                        
                         waterButton.interactable = true;
                         waterButton.image.color = waterButtonColour;
                     }
@@ -134,15 +146,11 @@ public class PotUI : MonoBehaviour
 
     void SetupButtonListeners()
     {
-        waterButton.onClick.AddListener( () =>
-        {
-            WaterPlants();
-        });
+        waterButton.onClick.AddListener(WaterPlants);
 
-        harvestButton.onClick.AddListener(() =>
-        {
-            HarvestPlants();
-        });
+        harvestButton.onClick.AddListener(HarvestPlants);
+        
+        unplantButton.onClick.AddListener(UnplantPlant);
     }
     
     void ResetPanel()
@@ -317,6 +325,15 @@ public class PotUI : MonoBehaviour
         if (harvestButton.interactable)
         {
             currentlySelectedPot.HarvestItem();
+        }
+    }
+
+    private void UnplantPlant()
+    {
+        if (unplantButton.gameObject.activeSelf)
+        {
+            currentlySelectedPot.UnplantItem();
+            ClosePanel();
         }
     }
 

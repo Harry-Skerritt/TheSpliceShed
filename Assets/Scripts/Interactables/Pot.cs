@@ -245,6 +245,29 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
 
         // Todo: See what else needs to be in here
     }
+
+    public void UnplantItem() 
+    { 
+        if (potStatus == PotStatus.ReadyToHarvest)
+        {
+            HarvestItem();
+        }
+        
+        lastHarvestS = 0;
+        lastHarvestD = 0;
+        potStatus = PotStatus.Empty;
+        InventoryManager.Instance.AddItem(plantGrowing, 1);
+        birthDay = 0;
+        birthTime = 0;
+        plantAge = 0;
+        ageInHours = true;
+        plantName = "";
+        plantType = ItemType.Misc;
+        plantGrowing = null;
+        
+        readyToHarvestParticles.Stop();
+        noWaterParticles.Stop();
+    }
     
     // Interaction Handling
     public void OnPointerEnter(PointerEventData eventData)
