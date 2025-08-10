@@ -20,11 +20,15 @@ public class PotManager : MonoBehaviour
     
     [Header("Pot Info")]
     [SerializeField] private GameObject potPrefab;
-    [SerializeField] private Transform[] potLocations;
-    [SerializeField] private int potsToCreate;
+    //[SerializeField] private Transform[] potLocations;
+    //[SerializeField] private int potsToCreate;
 
     private List<Pot> potList = new List<Pot>();
     private Dictionary<string, Pot> potDict = new Dictionary<string, Pot>();
+    
+    
+    // Temp - Replace with the level manager
+    private int currentLevel = 0;
 
 
 
@@ -45,46 +49,64 @@ public class PotManager : MonoBehaviour
         {
             Debug.LogError("PotManager: PotManager needs a PotPrefab!");
         }
-        
-        InitalisePots();
     }
 
     private void InitalisePots()
     {
         ClearAllPotsInScene(); // Make this keep their data
+        
+       PotSpawnPoint[] spawnPoints = FindObjectsByType<PotSpawnPoint>(FindObjectsSortMode.None);
+       Debug.Log(spawnPoints.Length);
 
-        int actualPotsToCreate = Mathf.Min(potsToCreate, potLocations.Length);
+       foreach (PotSpawnPoint point in spawnPoints)
+       {
+           if (point == null) continue;
 
-        for (int i = 0; i < actualPotsToCreate; i++)
-        {
-            Transform location = potLocations[i];
-            if (location != null)
-            {
-                GameObject potGO = Instantiate(potPrefab, location.position, Quaternion.identity);
-                Pot potComponent = potGO.GetComponent<Pot>();
+           // Only spawn if player’s current level is high enough
+           if (currentLevel < point.GetUnlockLevel)
+           {
+               Debug.Log($"PotManager: Skipping pot at {point.transform.position} - UnlockLevel {point.GetUnlockLevel} not reached.");
+               continue;
+           }
 
-                if (potComponent != null)
-                {
-                    string newPotID = "Pot_" + System.Guid.NewGuid().ToString().Substring(0, 8);
-                    potGO.name = newPotID;
-                    potComponent.SetPotID(newPotID);
-                    potComponent.SetPotColours(selectedColour, hoverColour);
-                    potComponent.SetupTooltip(mainCanvas, potTooltip);
-                    potList.Add(potComponent);
-                    potDict.Add(newPotID, potComponent);
-                    Debug.Log($"PotManager: {potGO.name} created at {location.position} successfully!");
-                }
-                else
-                {
-                    Debug.LogError($"PotManager: Prefab is missing a 'Pot' component! Pot at {location.position} not initialised!");
-                    Destroy(potGO);
-                }
-            }
-            else
-            {
-                Debug.LogWarning($"PotManager: Unable to create pot at index {i} as location is null!");
-            }
-        }
+           GameObject potGO = Instantiate(potPrefab, point.transform.position, Quaternion.identity);
+           
+           // Refine this
+           switch (point.GetPotSize)
+           {
+               case PotSize.Small:
+                   potGO.transform.localScale = Vector3.one * 0.15f;
+                   break;
+               case PotSize.Medium:
+                   potGO.transform.localScale = Vector3.one * 0.2f;
+                   break;
+               case PotSize.Large:
+                   potGO.transform.localScale = Vector3.one * 0.25f;
+                   break;
+           }
+
+           Pot potComponent = potGO.GetComponent<Pot>();
+           if (potComponent != null)
+           {
+               string newPotID = "Pot_" + Guid.NewGuid().ToString().Substring(0, 8);
+               potGO.name = newPotID;
+               potComponent.SetPotID(newPotID);
+               potComponent.SetPotColours(selectedColour, hoverColour);
+               potComponent.SetupTooltip(mainCanvas, potTooltip);
+               potComponent.SetPotSize(point.GetPotSize);
+               potComponent.SetPotUnlockLevel(point.GetUnlockLevel);
+
+               potList.Add(potComponent);
+               potDict.Add(newPotID, potComponent);
+
+               Debug.Log($"PotManager: {potGO.name} created at {point.transform.position} (Size {point.GetPotSize}, Unlock {point.GetUnlockLevel}).");
+           }
+           else
+           {
+               Debug.LogError($"PotManager: PotPrefab missing 'Pot' component! Destroying object.");
+               Destroy(potGO);
+           }
+       }
     }
 
     private void ClearAllPotsInScene()
@@ -111,6 +133,7 @@ public class PotManager : MonoBehaviour
         else
         {
             Debug.LogWarning("PotManager: No pot save data found! Using intialised pots");
+            InitalisePots();
         }
     }
 
@@ -143,7 +166,7 @@ public class PotManager : MonoBehaviour
 
     public void SetPotData(PotData data)
     {
-        if (data == null || data.pots == null)
+        if (data == null || data.pots == null || data.pots.Count == 0)
         {
             Debug.LogWarning("PotManager: Attempted to set pot data will null or empty data. Using default pots");
             InitalisePots();
@@ -159,6 +182,20 @@ public class PotManager : MonoBehaviour
             Quaternion loadedRotation = Quaternion.Euler(0, loadedPotState.rotationY, 0);
 
             GameObject potGO = Instantiate(potPrefab, loadedPosition, loadedRotation);
+            
+            switch (loadedPotState.potSize)
+            {
+                case PotSize.Small:
+                    potGO.transform.localScale = Vector3.one * 0.15f;
+                    break;
+                case PotSize.Medium:
+                    potGO.transform.localScale = Vector3.one * 0.2f;
+                    break;
+                case PotSize.Large:
+                    potGO.transform.localScale = Vector3.one * 0.25f;
+                    break;
+            }
+            
             Pot potComponent = potGO.GetComponent<Pot>();
 
             if (potComponent != null)
@@ -168,6 +205,8 @@ public class PotManager : MonoBehaviour
                 potComponent.SetPotColours(selectedColour, hoverColour);
                 potComponent.SetPotState(loadedPotState);
                 potComponent.SetupTooltip(mainCanvas, potTooltip);
+                potComponent.SetPotSize(loadedPotState.potSize);
+                potComponent.SetPotUnlockLevel(loadedPotState.unlockLevel);
                 
                 potList.Add(potComponent);
                 potDict.Add(loadedPotState.potId, potComponent);
@@ -177,39 +216,6 @@ public class PotManager : MonoBehaviour
             {
                 Debug.LogError($"PotManager: PotPrefab is missing 'Pot' component!");
                 Destroy(potGO);
-            }
-        }
-        
-        int potsToAdd = potsToCreate - potList.Count;
-        if (potsToAdd > 0)
-        {
-            Debug.Log($"PotManager: Loaded {potList.Count} pots, need to add {potsToAdd} more to reach potsToCreate minimum.");
-            for (int i = 0; i < potsToAdd; i++)
-            {
-                // Find an available potLocation or just instantiate at origin if all are used
-                Transform location = (i < potLocations.Length) ? potLocations[i] : null;
-                Vector3 spawnPos = (location != null) ? location.position : Vector3.zero;
-
-                GameObject potGO = Instantiate(potPrefab, spawnPos, Quaternion.identity, this.transform);
-                Pot potComponent = potGO.GetComponent<Pot>();
-
-                if (potComponent != null)
-                {
-                    string newPotID = "Pot_" + System.Guid.NewGuid().ToString().Substring(0, 8);
-                    potGO.name = newPotID;
-                    potComponent.SetPotID(newPotID);
-                    potComponent.SetPotColours(selectedColour, hoverColour);
-                    potComponent.SetupTooltip(mainCanvas, potTooltip);
-                    // Pot will be initialized as empty by default
-                    potList.Add(potComponent);
-                    potDict.Add(newPotID, potComponent);
-                    Debug.Log($"PotManager: Added new default pot '{newPotID}'.");
-                }
-                else
-                {
-                    Debug.LogError($"PotManager: PotPrefab is missing a 'Pot' component! Cannot add default pot.");
-                    Destroy(potGO);
-                }
             }
         }
     }

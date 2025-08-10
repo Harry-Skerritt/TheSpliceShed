@@ -223,9 +223,9 @@ public class PotUI : MonoBehaviour
         string potSizeString = "Ceramic Pot";
         switch (pot.GetPotSize())
         {
-            case 0: potSizeString = "Small"; break;
-            case 1: potSizeString = "Medium"; break;
-            case 2: potSizeString = "Large"; break;
+            case PotSize.Small: potSizeString = "Small"; break;
+            case PotSize.Medium: potSizeString = "Medium"; break;
+            case PotSize.Large: potSizeString = "Large"; break;
         }
 
         title.text = $"{potSizeString} Ceramic Pot";

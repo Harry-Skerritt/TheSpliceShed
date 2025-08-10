@@ -177,9 +177,9 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
         string potSizeString = "Ceramic Pot";
         switch (currentlySelectedPot.GetPotSize())
         {
-            case 0: potSizeString = "Small"; break;
-            case 1: potSizeString = "Medium"; break;
-            case 2: potSizeString = "Large"; break;
+            case PotSize.Small: potSizeString = "Small"; break;
+            case PotSize.Medium: potSizeString = "Medium"; break;
+            case PotSize.Large: potSizeString = "Large"; break;
         }
         title.text = $"{potSizeString} Ceramic Pot ({currentlySelectedPot.GetPotID()})";
 
@@ -235,14 +235,14 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
             return;
         }
         
-        if (droppedItemData.requiredPotSize == -1 || droppedItemData.requiredPotSize > currentlySelectedPot.GetPotSize())
+        if (droppedItemData.requiredPotSize > currentlySelectedPot.GetPotSize())
         {
             string requiredSize = "Any";
             switch (droppedItemData.requiredPotSize)
             {
-                case 0: requiredSize = "Small"; break;
-                case 1: requiredSize = "Medium"; break;
-                case 2: requiredSize = "Large"; break;
+                case PotSize.Small: requiredSize = "Small"; break;
+                case PotSize.Medium: requiredSize = "Medium"; break;
+                case PotSize.Large: requiredSize = "Large"; break;
             }
             DisplayMessage($"This pot is too small! Try a {requiredSize} pot.");
             InventoryManager.Instance.ClearDragState();
@@ -278,9 +278,9 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
         string potSizeDisplay = "-";
         switch (plantedItemDataCandidate.requiredPotSize)
         {
-            case 0: potSizeDisplay = "S"; break;
-            case 1: potSizeDisplay = "M"; break;
-            case 2: potSizeDisplay = "L"; break;
+            case PotSize.Small: potSizeDisplay = "S"; break;
+            case PotSize.Medium: potSizeDisplay = "M"; break;
+            case PotSize.Large: potSizeDisplay = "L"; break;
         }
         itemPotSize.text = potSizeDisplay;
         itemPotSize.gameObject.SetActive(true);
