@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance { get; private set; }
-
+    
     [Header("Time Settings")] 
     [Tooltip("Real world seconds per in game minute")] 
-    [Range(0.1f, 10.0f)] [SerializeField] private float timeScale = 1.0f;
+    [Range(0.1f, 10.0f)] [SerializeField] private float baseTimeScale = 1.0f;
     
     [Tooltip("When hour when the day starts")]
     [Range(0, 23)][SerializeField] private int startHour = 6;
@@ -19,6 +21,11 @@ public class TimeManager : MonoBehaviour
     
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI timeTextObject;
+    [SerializeField] private Button factor1xButton;
+    [SerializeField] private Button factor2xButton;
+    [SerializeField] private Button factor3xButton;
+    [SerializeField] private Color selectedColor;
+    [SerializeField] private int currentScale = 1; // Default 1
 
     private float currentTimeInSeconds;
     private int currentHour;
@@ -72,6 +79,8 @@ public class TimeManager : MonoBehaviour
         }
 
         // Init and update UI
+        SetupScaleButtons();
+        UpdateScaleButtons();
         UpdateTimeDisplay();
         
         // Make sure starting time is sent
@@ -81,7 +90,7 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        currentTimeInSeconds += Time.deltaTime * (60f * timeScale);
+        currentTimeInSeconds += Time.deltaTime * (60f * (baseTimeScale * currentScale));
         
         int oldHour = currentHour;
         int oldMinute = currentMinute;
@@ -134,7 +143,50 @@ public class TimeManager : MonoBehaviour
             }
 
             // Use string formatting to ensure two digits for hour and minute (e.g., 09:05)
-            timeTextObject.text = $"Day {currentDay}\n{displayHour:00}:{currentMinute:00} {ampm}";
+            timeTextObject.text = $"Day {currentDay} {displayHour:00}:{currentMinute:00} {ampm}";
+        }
+    }
+
+    void SetupScaleButtons()
+    {
+        factor3xButton.onClick.AddListener(() =>
+        {
+            currentScale = 3;
+            UpdateScaleButtons();
+        });
+
+        factor2xButton.onClick.AddListener(() =>
+        {
+            currentScale = 2;
+            UpdateScaleButtons();
+        });
+
+        factor1xButton.onClick.AddListener(() =>
+        {
+            currentScale = 1;
+            UpdateScaleButtons();
+        });
+    }
+
+    void UpdateScaleButtons()
+    {
+        factor1xButton.image.color = Color.white;
+        factor2xButton.image.color = Color.white;
+        factor3xButton.image.color = Color.white;
+        
+        Debug.Log($"TimeManager: Scale: {currentScale}");
+        
+        if (currentScale == 1)
+        {
+            factor1xButton.image.color = selectedColor;
+        } 
+        else if (currentScale == 2)
+        {
+            factor2xButton.image.color = selectedColor;
+        } 
+        else if (currentScale == 3)
+        {
+            factor3xButton.image.color = selectedColor;
         }
     }
 
