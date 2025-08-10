@@ -76,6 +76,7 @@ public class TimeManager : MonoBehaviour
             currentTimeInSeconds = (startHour * 3600f) + (startMinute * 60f);
             currentHour = startHour;
             currentMinute = startMinute;
+            SetTimeScale(1);
         }
 
         // Init and update UI
@@ -115,6 +116,7 @@ public class TimeManager : MonoBehaviour
         }
 
         UpdateTimeDisplay();
+        CheckScaleKeys();
     }
 
     void UpdateTimeDisplay()
@@ -151,21 +153,34 @@ public class TimeManager : MonoBehaviour
     {
         factor3xButton.onClick.AddListener(() =>
         {
-            currentScale = 3;
-            UpdateScaleButtons();
+            SetTimeScale(3);
         });
 
         factor2xButton.onClick.AddListener(() =>
         {
-            currentScale = 2;
-            UpdateScaleButtons();
+            SetTimeScale(2);
         });
 
         factor1xButton.onClick.AddListener(() =>
         {
-            currentScale = 1;
-            UpdateScaleButtons();
+            SetTimeScale(1);
         });
+    }
+
+    void CheckScaleKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SetTimeScale(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SetTimeScale(2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SetTimeScale(3);
+        }
     }
 
     void UpdateScaleButtons()
@@ -190,6 +205,20 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    public void SetTimeScale(int scale)
+    {
+        if (scale > 0 && scale < 4)
+        {
+            currentScale = scale;
+            UpdateScaleButtons();
+        }
+        else
+        {
+            Debug.LogWarning("TimeManager: Cannot set time scale to a value that isn't 1, 2, 3");
+        }
+
+    }
+    
     public void SetTime(int hour, int minute)
     {
         hour = Mathf.Clamp(hour, 0, 23);
@@ -244,6 +273,7 @@ public class TimeManager : MonoBehaviour
         public int td_currentHour;
         public int td_currentMinute;
         public int td_currentDay;
+        public int td_currentScale;
     }
 
     public TimeData GetTimeData()
@@ -253,7 +283,8 @@ public class TimeManager : MonoBehaviour
             td_currentTimeInSeconds = this.currentTimeInSeconds,
             td_currentHour = this.currentHour,
             td_currentMinute = this.currentMinute,
-            td_currentDay = this.currentDay
+            td_currentDay = this.currentDay,
+            td_currentScale = this.currentScale
         };
     }
 
@@ -272,6 +303,7 @@ public class TimeManager : MonoBehaviour
         this.currentMinute = data.td_currentMinute;
         this.currentDay = data.td_currentDay;
         
+        SetTimeScale(data.td_currentScale);
         UpdateTimeDisplay();
         onHourChanged?.Invoke(currentHour);
         onDayChanged?.Invoke(currentDay);
