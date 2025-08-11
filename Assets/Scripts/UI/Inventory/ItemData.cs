@@ -8,6 +8,7 @@ public class ItemData : ScriptableObject
 {
     public string itemName = "New Item";
     public Sprite icon = null;
+    public Sprite[] growthSprites;
     public bool isStackable = true;
     public int maxStackSize = 100;
     public PotSize requiredPotSize = PotSize.Small;

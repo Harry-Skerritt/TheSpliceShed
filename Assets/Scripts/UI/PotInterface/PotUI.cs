@@ -359,9 +359,8 @@ public class PotUI : MonoBehaviour
             timeUntilHarvest.text = "N/A";
             return;
         }
-
-        long harvestTimeSeconds = GetTimeUntilHarvest(pot);
-        string formattedTime = FormatTime(harvestTimeSeconds);
+        
+        string formattedTime = pot.GetFormattedTime();
         if (formattedTime == "Ready!")
         {
             pot.SetReadyToHarvest(true);
@@ -384,65 +383,7 @@ public class PotUI : MonoBehaviour
         int clampedValue = Mathf.Clamp(roundedValue, 0, waterStatus.Length);
         return clampedValue;
     }
-
-    // Calculate the harvest time
-    private long GetTimeUntilHarvest(Pot pot)
-    {
-        if (TimeManager.Instance == null)
-        {
-            Debug.LogError("TimeManager is null. Cannot calculate harvest time.");
-            return -1;
-        }
-
-        if (pot.GetPlantGrowing() == null)
-        {
-            return -1;
-        }
-
-
-        long absoluteBirthTimeS
-            = (long)pot.GetBirthDay() * TimeManager.SECONDS_IN_A_DAY + (long)pot.GetBirthTime();
-        
-        long absoluteCurrentS = (long)TimeManager.Instance.CurrentDay * TimeManager.SECONDS_IN_A_DAY + (long)TimeManager.Instance.CurrentTimeInSeconds;
-        
-        long growthTimeS = (long)(pot.GetPlantGrowing().growthTime * TimeManager.SECONDS_IN_A_DAY);
-
-        long timeRemainingS;
-        
-        if (absoluteBirthTimeS < growthTimeS)
-        {
-            // New Plant
-            timeRemainingS = growthTimeS - absoluteCurrentS;
-            return (long)Mathf.Max(0, timeRemainingS);
-        }
-        
-        long absoluteLastHarvestS = (long)pot.GetLastHarvestD() * TimeManager.SECONDS_IN_A_DAY + (long)pot.GetLastHarvestS();
-        long absoluteTargetHarvestS = absoluteLastHarvestS + growthTimeS;
-        timeRemainingS = absoluteTargetHarvestS - absoluteCurrentS;
-            
-        return (long)Mathf.Max(0, timeRemainingS);
-    }
     
-    // Takes the time in seconds until harvest and formats it to "HH:MM"
-    private string FormatTime(long totalSeconds)
-    {
-        if (totalSeconds < 0) return "Overdue!";
-        if (totalSeconds == 0) return "Ready!";
-
-        long days = totalSeconds / TimeManager.SECONDS_IN_A_DAY;
-        long remainingSeconds = totalSeconds % TimeManager.SECONDS_IN_A_DAY;
-
-        long hours = remainingSeconds / TimeManager.SECONDS_IN_AN_HOUR;
-        remainingSeconds %= TimeManager.SECONDS_IN_AN_HOUR;
-
-        long minutes = remainingSeconds / 60;
-        
-        string result = "";
-        if (days > 0) result += $"{days}d ";
-        result += $"{hours:00}:{minutes:00}"; // Always show HH:MM
-
-        return result.Trim();
-    }
 
     private void OnDestroy()
     {

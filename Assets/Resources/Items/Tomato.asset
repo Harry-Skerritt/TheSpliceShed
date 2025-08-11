@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tomato
   icon: {fileID: 21300000, guid: 03ed4d1240320134ea82248bb9748368, type: 3}
+  growthSprites:
+  - {fileID: 1084598747595547403, guid: cc1282c8340600742b61265ab53d6651, type: 3}
+  - {fileID: -8984486189867489481, guid: cc1282c8340600742b61265ab53d6651, type: 3}
+  - {fileID: -7347427372050199002, guid: cc1282c8340600742b61265ab53d6651, type: 3}
   isStackable: 1
   maxStackSize: 100
   requiredPotSize: 2
