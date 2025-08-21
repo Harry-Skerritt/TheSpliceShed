@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de9edad468657454391ba10d59200ef1, type: 3}
+  m_Script: {fileID: 11500000, guid: c64fc8fa18cf9485ea92d8fa582c5c96, type: 3}
   m_Name: Rose
   m_EditorClassIdentifier: 
   itemName: Rose
@@ -19,8 +19,8 @@ MonoBehaviour:
   - {fileID: -8984486189867489481, guid: cc1282c8340600742b61265ab53d6651, type: 3}
   - {fileID: -7347427372050199002, guid: cc1282c8340600742b61265ab53d6651, type: 3}
   isStackable: 1
-  maxStackSize: 50
-  requiredPotSize: 0
-  growthTime: 1.5
-  drainRate: 0.1
+  maxStackSize: 100
+  requiredPotSize: 1
+  growthTime: 1
+  drainRate: 0.5
   itemType: 1
