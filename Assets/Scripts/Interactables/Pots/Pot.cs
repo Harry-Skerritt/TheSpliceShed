@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Net;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -46,7 +47,9 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
     [SerializeField] private Canvas mainUICanvas;
     [SerializeField] private ParticleSystem readyToHarvestParticles;
     [SerializeField] private ParticleSystem noWaterParticles;
+    [SerializeField] private ParticleSystem wateredParticles;
     [SerializeField] private SpriteRenderer growthRenderer;
+    [SerializeField] private SpriteRenderer potCoverRenderer;
     
     [Header("Sorting Layers")]
     [SerializeField] private string initialSortingLayer;
@@ -145,15 +148,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
     {
         if (readyToHarvestParticles != null) readyToHarvestParticles.Stop();
         if (noWaterParticles != null) noWaterParticles.Stop();
-        
-        
-        // Init the Tooltip Pos
-        //Vector2 pos;
-        //RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        //    mainUICanvas.transform as RectTransform,
-        //    Input.mousePosition,
-        //    mainUICanvas.worldCamera,
-        //    out pos);
+        if (wateredParticles != null) wateredParticles.Stop();
     }
 
     private void Update()
@@ -302,7 +297,14 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
 
     public void WaterPlant()
     {
+
         float newWaterLevel = waterLevel + 1.0f;
+
+        if (newWaterLevel != waterLevel)
+        {
+            wateredParticles.Emit(75);
+        }
+        
         waterLevel = Mathf.Clamp(newWaterLevel, 0.0f, 5.0f);
         UpdateParticles();
     }
@@ -457,6 +459,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         if (selected)
         {
             spriteRenderer.color = selectedColour;
+            potCoverRenderer.color = selectedColour;
             SetSortingLayers(selectedSortingLayer, particleSelectedSortingLayer);
             tooltipText.gameObject.SetActive(false);
             CameraZoomController.Instance.ZoomIn(gameObject);
@@ -464,6 +467,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         else
         {
             spriteRenderer.color = baseColour;
+            potCoverRenderer.color = baseColour;
             SetSortingLayers(initialSortingLayer, particleInitialSortingLayer);
             CameraZoomController.Instance.ZoomOut();
         }
@@ -477,10 +481,12 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         while (elapsedTime < colourChangeDuration)
         {
             spriteRenderer.color = Color.Lerp(startColour, colour, elapsedTime / colourChangeDuration);
+            potCoverRenderer.color = Color.Lerp(startColour, colour, elapsedTime / colourChangeDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         spriteRenderer.color = colour;
+        potCoverRenderer.color = colour;
         hoverCoroutine = null;
     }
 
