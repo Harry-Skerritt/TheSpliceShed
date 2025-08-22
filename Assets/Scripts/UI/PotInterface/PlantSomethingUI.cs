@@ -271,6 +271,7 @@ public class PlantSomethingUI : MonoBehaviour, IPointerClickHandler
             case ItemType.Flower: typeDisplay = "Flower"; break;
             case ItemType.Fruit: typeDisplay = "Fruit"; break;
             case ItemType.Vegetable: typeDisplay = "Vegetable"; break;
+            case ItemType.Seed: typeDisplay = "Seed"; break;
         }
         itemType.text = typeDisplay;
         itemType.gameObject.SetActive(true);

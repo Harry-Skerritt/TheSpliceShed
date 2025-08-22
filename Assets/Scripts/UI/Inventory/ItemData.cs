@@ -6,8 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class ItemData : ScriptableObject
 {
+
     public string itemName = "New Item";
     public Sprite icon = null;
+    public ItemType itemType = ItemType.Misc;
+    
     public Sprite[] growthSprites;
     public bool isStackable = true;
     public int maxStackSize = 100;
@@ -15,7 +18,9 @@ public class ItemData : ScriptableObject
     [UnityEngine.Range(0, 20)] public float growthTime = 0.5f; // In days 
     [UnityEngine.Range(0.0f, 1.0f)] public float drainRate = 0.5f;
     
-    public ItemType itemType = ItemType.Misc;
+    // Only For Seed
+    public ItemData outputItemData;
+
 }
 
 public enum ItemType
@@ -24,5 +29,6 @@ public enum ItemType
     Flower,
     Vegetable,
     Fruit,
+    Seed,
     Misc
 }

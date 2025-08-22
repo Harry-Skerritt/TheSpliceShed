@@ -265,7 +265,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
             Debug.LogWarning($"{potId}: Pot is too small for this Item!");
             return false;
         }
-
+        
         if (TimeManager.Instance != null)
         {
             // Set the plants birthday
@@ -278,6 +278,21 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
             return false;
         }
 
+
+        if (plant.itemType == ItemType.Seed)
+        {
+            Plant(plant.outputItemData);
+        }
+        else
+        {
+            Plant(plant);
+        }
+        
+        return true;
+    }
+
+    private void Plant(ItemData plant)
+    {
         currentGrowthStageSprite = plant.growthSprites;
         
         plantGrowing = plant;       // Set plant itemData
@@ -292,20 +307,22 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         ageInHours = true;          // Until plant a day old this is true
 
         Debug.Log($"{potId}: Successfully planted {plant.itemName}");
-        return true;
     }
 
     public void WaterPlant()
     {
 
         float newWaterLevel = waterLevel + 1.0f;
-
-        if (newWaterLevel != waterLevel)
+        
+        float tempWaterLevel = Mathf.Clamp(newWaterLevel, 0.0f, 5.0f);
+        
+        if (tempWaterLevel != waterLevel)
         {
             wateredParticles.Emit(75);
         }
         
-        waterLevel = Mathf.Clamp(newWaterLevel, 0.0f, 5.0f);
+        waterLevel = tempWaterLevel;
+        
         UpdateParticles();
     }
     
