@@ -332,7 +332,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
         {
             Debug.LogWarning($"{potId}: Plant not ready for harvest");
             return;
-            // Shouldnt happen
+            // Shouldn't happen
         }
         
         // Set the last harvest time
@@ -664,7 +664,7 @@ public class Pot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPo
     }
     
     // Calculate the harvest time
-    public long GetTimeUntilHarvest()
+    private long GetTimeUntilHarvest()
     {
         if (TimeManager.Instance == null)
         {
